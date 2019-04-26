@@ -1,14 +1,13 @@
 syntax = "proto3";
 
-package contentservice;
+package v1;
 
-service contentservice {
+service ContentService {
     rpc GetVideoInfo (VideoInfoRequest) returns (VideoInfoReply) {}
 }
 
 
 message VideoInfo {
-    int64   id = 1;
     string  title = 2;
 }
 
@@ -18,6 +17,5 @@ message VideoInfoRequest {
 }
 
 message VideoInfoReply {
-    string apiVersion = 1;
     VideoInfo videoInfo = 2;
 }
